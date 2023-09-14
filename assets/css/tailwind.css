@@ -14,3 +14,63 @@ body {
     @apply p-3 rounded-md bg-white shadow-md h-full;
   }
 }
+
+.category-button {
+  background-color: #3498db;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px; /* Adjust the font size as needed */
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 4px;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.category-button:hover {
+  background-color: #1e69d1; /* Change the background color on hover */
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Default styles for cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Add a scale effect on hover */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Change the box-shadow on hover */
+  background-color: #e0e0e0; /* Change the background color on hover */
+}
+
+.serviceCard{
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+.serviceCard:hover {
+  transform: scale(1.05); /* Add a scale effect on hover */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Change the box-shadow on hover */
+  background-color: #e0e0e0; /* Change the background color on hover */
+}
+
+/* Media query for 3 cards per row */
+@media (min-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

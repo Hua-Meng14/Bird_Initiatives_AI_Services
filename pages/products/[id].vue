@@ -1,29 +1,35 @@
 <template>
-  <div>
-    <!-- example solution for dynamic meta tags -->
-    <!-- <Head>
-      <Title>Nuxt Dojo | {{ product.title }}</Title>
-      <Meta name="description" :content="product.description" />
-    </Head> -->
-    <ProductDetails :product="product" />
-  </div>
+    <div>
+        <h1>ID: {{ $route.params.id }}</h1>
+        <!-- <p>{{ product.description }}</p> -->
+    </div>
 </template>
+  
+<script>
+import { state as data } from '~/dummyData/data';
 
-<script setup>
-const { id } = useRoute().params;
-const runtimeConfig = useRuntimeConfig();
-const uri = `${runtimeConfig.public.fakeStoreApiUrl}products/${id}`;
+export default {
+    data() {
+        return {
+            products: data.products,
+            selectedProduct: null,
+        };
+    },
+    beforeMount() {
+        const productId = this.$route.params.id;
+        console.log("Product ID:", productId);
 
-// Le key sert de dépendance, si sa valeur change le fetch ce relance, mais bon apparemment ca marche sans...
-const { data: product } = await useFetch(uri, { key: id });
+        // Find the product with a matching id
+        const matchedProduct = this.products.find(product => product.id === Number(productId));
 
-if (!product.value) {
-  throw createError({ statusCode: 404, statusMessage: "Product not found" });
-}
-
-definePageMeta({
-  layout: "products",
-});
+        // Check if a matching product was found
+        if (matchedProduct) {
+            // Assign the matched product to selectedProduct
+            this.selectedProduct = matchedProduct;
+            console.log("Selected Product:", this.selectedProduct);
+        } else {
+            console.log("Product not found");
+        }
+    },
+};
 </script>
-
-<style scoped></style>
