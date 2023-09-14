@@ -5,8 +5,8 @@
         <NuxtLink to="/" class="font-bold">Bird Initiative AI Services</NuxtLink>
         <ul class="flex gap-4">
           <li><NuxtLink to="/">Home</NuxtLink></li>
-          <li><NuxtLink to="/about">About</NuxtLink></li>
-          <li><NuxtLink to="/products" class="btn">Products</NuxtLink></li>
+          <li><NuxtLink to="/articles">Articles</NuxtLink></li>
+          <li><NuxtLink to="/products">Products</NuxtLink></li>
         </ul>
       </nav>
     </header>
