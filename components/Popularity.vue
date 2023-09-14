@@ -43,9 +43,11 @@
 
             <!-- See More Button -->
             <div class="text-right mt-4">
-                <button class="bg-yellow-300 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded-md">
-                    See More >
-                </button>
+                <NuxtLink to="/products"><button
+                        class="bg-yellow-300 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded-md">
+                        See More >
+                    </button>
+                </NuxtLink>
             </div>
         </div>
     </div>
