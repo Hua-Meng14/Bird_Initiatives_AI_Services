@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import ProductList from "/home/gmhua/Documents/Backend/birdAI/nuxt3-store-main/components/ProductList.vue";
+import ProductList from "~/components/ProductList.vue";
 import Footer from "~~/components/Footer.vue";
 import NewArticles from "~~/components/Footer.vue";
 import NewAIServices from "~~/components/Footer.vue";
