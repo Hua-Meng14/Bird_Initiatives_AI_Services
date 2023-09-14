@@ -23,14 +23,20 @@ const config: NuxtConfig = {
       return productIds.map((id: any) => `/services/${id}`);
     }
   },
+  vue: {
+    config: {
+      productionTip: false, // Disable the "You are running Vue in development mode." warning
+    },
+  },
   head: {
     title: "Bird Initiatives AI Services",
     meta: [{ name: "description", content: "Everything about AI Services" }],
     link: [
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/icon?family=Material+Icons",
-      },
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '~/favicon.ico' // Path to your favicon image
+      }
     ],
   },
 };

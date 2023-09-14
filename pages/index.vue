@@ -8,9 +8,11 @@
       Why not find the perfect service for you by referring to our editorial department's reviews and usage guides?
     </h3>
     <div style="text-align: center;">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold text-2xl py-6 px-10 rounded-full">
-        Take a look at AI Services
-      </button>
+      <NuxtLink to="/products">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold text-2xl py-6 px-10 rounded-full">
+          Take a look at AI Services
+        </button>
+      </NuxtLink>
     </div>
     <div style="text-align: center; margin-top: 40px;">
       <div style="background-color: #f0f0f0; padding: 20px; border-radius: 10px; width: 70%; margin: 0 auto;">

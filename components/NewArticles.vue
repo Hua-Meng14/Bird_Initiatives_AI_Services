@@ -3,44 +3,18 @@
         <div style="padding: 20px; border-radius: 10px; width: 100%; margin: 0 auto;">
             <h3 class="text-2xl py-5 font-bold">New articles</h3>
             <div class="cards-container">
-                <!-- Card 1 -->
-                <div class="card">
-                    <img class="w-full"
-                        src="https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/2023-04-24_16h31_34.png"
-                        alt="Sunset in the mountains">
-                    <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">Title</div>
-                        <p class="text-gray-700 text-base">
-                            Subtitle
-                        </p>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="card">
-                    <img class="w-full"
-                        src="https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/2023-04-24_16h31_34.png"
-                        alt="Sunset in the mountains">
-                    <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">Title</div>
-                        <p class="text-gray-700 text-base">
-                            Subtitle
-                        </p>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="card">
-                    <img class="w-full"
-                        src="https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/2023-04-24_16h31_34.png"
-                        alt="Sunset in the mountains">
-                    <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">Title</div>
-                        <p class="text-gray-700 text-base">
-                            Subtitle
-                        </p>
+                <div v-for="(service, index) in services.slice(0, 3)" :key="index"
+                    class="w-full max-w bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 serviceCard">
+                    <NuxtLink :to="`/articles/${service.id}`">
+                        <img class="p-2 rounded-t-lg" :src="service.image" :alt="service.title" />
+                    </NuxtLink>
+                    <div class="px-5 pb-5">
+                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{
+                            service.title }}
+                        </h5>
                     </div>
                 </div>
             </div>
-
             <!-- See More Button -->
             <div class="text-right mt-4">
                 <NuxtLink to="/articles"><button
@@ -52,3 +26,19 @@
         </div>
     </div>
 </template>
+
+<script>
+import { state as product } from '~/dummyData/articles';
+export default {
+    data() {
+        return {
+            services: product.articles.map(product => ({
+                id: product.id,
+                title: product.title,
+                image: product.image,
+                last_updated: product.last_updated
+            }))
+        };
+    }
+};
+</script>
