@@ -36,23 +36,11 @@
         </div>
     </div>
 </template>
-  
-<!-- <script lang="ts">
-
-export default defineComponent({
-    computed: {
-        data() {
-            return this.state.products.product;
-        },
-    },
-});
-</script> -->
 <script>
 import { state as product } from '../dummyData/data';
 export default {
     data() {
         return {
-            // Use the products data from the imported state
             services: product.products.map(product => ({
                 id: product.id,
                 title: product.title,
@@ -65,147 +53,7 @@ export default {
         };
     }
 
-    // services: [
-    //     {
-    //         id: 1,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 2,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 3,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 4,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 6,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 7,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 8,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 9,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 10,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 11,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 12,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 13,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 14,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 15,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    //     {
-    //         id: 5,
-    //         title: 'Blockcode AI Photo Studio',
-    //         sub_title: 'Created brand avatars to personalized marketing.',
-    //         link: '#',
-    //         image: 'https://appliv-gai-production.s3.ap-northeast-1.amazonaws.com/images/blockode-ai-photo-studio.png',
-    //         ratings: [1, 2, 3, 4, 5], // Example ratings
-    //         rating: 5.0 // Example rating
-    //     },
-    // ]
 };
-</script>
-  
-<style scoped>
-/* Add your styles here */
-</style>
+</script>  
+<style scoped></style>
   
