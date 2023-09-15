@@ -1,26 +1,25 @@
 <template>
-    <div class="py-10">
-        <div class="flex items-center justify-center space-x-8">
+    <div class="py-5">
+        <div class="flex flex justify-center">
+            <h1
+                class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-3xl dark:text-white">
+                Read Article: {{ this.selectedProduct.title }}</h1>
+        </div>
+        <div class="flex flex-col items-center space-y-8  py-5">
             <div class="w-1/2">
                 <img class="max-h-lg max-w-full mx-auto" :src="this.selectedProduct.image" alt="Image Description">
             </div>
-            <div class="w-1/2">
-                <h1 class="text-3xl font-bold border-b-2 border-blue-600 pb-2">Overview of {{ this.selectedProduct.title }}
-                </h1>
+            <div class="w-3/5 py-10">
+                <h1 class="text-3xl font-bold border-b-2 border-blue-600 pb-2">{{ this.selectedProduct.title }}</h1>
                 <p class="mt-4 text-lg text-gray-700">{{ this.selectedProduct.description }}</p>
+            </div>
+            <div class="w-3/5 py-10">
+                <h1 class="text-3xl font-bold border-b-2 border-blue-600 pb-2">What is {{ this.selectedProduct.title }}?
+                </h1>
+                <p class="mt-4 text-lg text-gray-700">{{ this.selectedProduct.what_is }}</p>
             </div>
         </div>
 
-
-
-        <div class="flex justify-center py-5">
-            <a :href="this.selectedProduct.link"
-                class="w-2/3 sm:w-auto max-w-xl bg-yellow-300 hover:bg-yellow-500 text-black rounded-lg inline-flex items-center justify-center px-6 py-3 dark:bg-blue-700 dark:hover:bg-blue-600 dark:focus:ring-blue-700">
-                <div class="text-left">
-                    <div class="font-sans text-lg font-semibold">Try using {{ this.selectedProduct.title }} Now</div>
-                </div>
-            </a>
-        </div>
         <div class="w-full p-4 text-center rounded-lg py-10">
             <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Share with your friends</h5>
             <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 py-10">
@@ -74,19 +73,19 @@
                 </a>
             </div>
         </div>
-        <h1 class="text-3xl font-bold border-b-2 border-blue-600 pb-2">Related AI Services {{ this.selectedProduct.title }}
+        <h1 class="text-3xl font-bold border-b-2 border-blue-600 pb-2">Related articles:
         </h1>
         <!-- <p>{{ product.description }}</p> -->
     </div>
 </template>
   
 <script>
-import { state as data } from '~/dummyData/data';
+import { state as articles } from '~/dummyData/articles';
 
 export default {
     data() {
         return {
-            products: data.products,
+            products: articles.articles,
             selectedProduct: null,
         };
     },

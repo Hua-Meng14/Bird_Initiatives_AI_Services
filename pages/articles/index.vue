@@ -8,7 +8,7 @@
         <div class="container mx-auto grid gap-6 md:grid-cols-4">
             <div v-for="(service, index) in services" :key="index"
                 class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 serviceCard">
-                <NuxtLink :to="`/products/${service.id}`">
+                <NuxtLink :to="`/articles/${service.id}`">
                     <img class="p-2 rounded-t-lg" :src="service.image" :alt="service.title" />
                 </NuxtLink>
                 <div class="px-5 pb-5">
