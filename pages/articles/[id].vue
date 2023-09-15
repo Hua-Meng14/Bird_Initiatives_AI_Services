@@ -1,5 +1,7 @@
 <template>
-    <div class="py-5">
+    <div>
+        <!-- Add a Back button -->
+        <router-link to="/"><button class="px-5 py-3 m-1 rounded-full bg-gray-300">Back</button></router-link>
         <div class="flex flex justify-center">
             <h1
                 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-3xl dark:text-white">

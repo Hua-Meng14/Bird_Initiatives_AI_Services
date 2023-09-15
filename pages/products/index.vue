@@ -14,7 +14,7 @@
         type="text" placeholder="Search services..." />
     </div>
 
-    <div class="container mx-auto grid gap-6 md:grid-cols-4">
+    <div class="container mx-auto grid gap-6 md:grid-cols-4 py-3">
       <div v-for="(service, index) in paginatedServices" :key="index"
         class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 serviceCard">
         <NuxtLink :to="`/products/${service.id}`">

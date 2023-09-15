@@ -1,5 +1,8 @@
 <template>
-    <div class="py-10">
+    <div>
+        <!-- Add a Back button -->
+        <router-link to="/"><button class="px-5 py-3 m-1 rounded-full bg-gray-300">Back</button></router-link>
+
         <div class="flex items-center justify-center space-x-8">
             <div class="w-1/2">
                 <img class="max-h-lg max-w-full mx-auto" :src="this.selectedProduct.image" alt="Image Description">
@@ -10,9 +13,6 @@
                 <p class="mt-4 text-lg text-gray-700">{{ this.selectedProduct.description }}</p>
             </div>
         </div>
-
-
-
         <div class="flex justify-center py-5">
             <a :href="this.selectedProduct.link"
                 class="w-2/3 sm:w-auto max-w-xl bg-yellow-300 hover:bg-yellow-500 text-black rounded-lg inline-flex items-center justify-center px-6 py-3 dark:bg-blue-700 dark:hover:bg-blue-600 dark:focus:ring-blue-700">
